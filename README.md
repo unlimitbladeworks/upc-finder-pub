@@ -75,7 +75,7 @@
 
 选中标题，右键即可查询，如下图：
 
-![right-amz](9right-amz.png)
+![right-amz](img/9right-amz.png)
 
 各位可以收藏本地址，便于后续更新下载。
 
