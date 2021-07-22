@@ -1,5 +1,13 @@
 # upc查找小助手谷歌插件
 
+目前支持的网站：
+
+- [x] [walmart](https://www.walmart.com/)
+- [x] [target](https://www.target.com/)
+- [x] [macys](https://www.macys.com/)
+- [x] [lowes](https://www.lowes.com/)
+
+
 ## 如何下载
 
 打开github仓库地址，点击右侧的 release ：
