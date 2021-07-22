@@ -50,11 +50,11 @@
 
 或者自行注册 github 的账号，点击上面的 star ，即可收藏。
 
-1：登录账号后，点击右上方star
+1、登录账号后，点击右上方star
 ![友情提示1](img/6star.png)
-2：点击 your stars
+2、点击 your stars
 ![友情提示2](img/7star.png)
-3：可以查看到
+3、可以查看到
 ![友情提示3](img/8star.png)
 
 
