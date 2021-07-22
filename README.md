@@ -7,6 +7,9 @@
 - [x] [macys](https://www.macys.com/)
 - [x] [lowes](https://www.lowes.com/)
 
+```diff
++ 网站带有的变体商品，upc以当前进入详情页的商品为准。（若选择其他变体，upc可能还是主商品，需注意）
+```
 
 ## 如何下载
 
