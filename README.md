@@ -14,7 +14,7 @@
 
 ## 如何安装
 
-找到一个固定的位置，解压 zip 文件(<font color="red">文件夹不要轻易移动否则插件失效</font>)
+找到一个固定的位置，解压 zip 文件(<font color=red> ** 文件夹不要轻易移动否则插件失效 ** </font>)
 
 ![如何安装1](img/3unpack.png)
 
