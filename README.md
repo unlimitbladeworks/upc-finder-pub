@@ -58,7 +58,7 @@
 
 其一，注册 github 账号，登录后，在下图中提出 issue ：
 
-!(issue提出)[img/10issue.png]
+![issue提出](img/10issue.png)
 
 ```diff
 - 推荐该方式，能给大家留下网站参考
