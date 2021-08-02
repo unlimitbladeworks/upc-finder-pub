@@ -87,3 +87,28 @@
 ![友情提示2](img/7star.png)
 3、可以查看到
 ![友情提示3](img/8star.png)
+
+
+## 额外福利，批量根据 asin 查询销售权限
+
+
+``` html
+javascript:(function(){function httpRequest(url,callback){var xhr=new XMLHttpRequest();xhr.open("GET",url,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){callback(xhr)}};xhr.send()}function getasins(){var asins=prompt('输入asin，请从excel复制过来并保证按每列排序');asins=asins.split('\n');return asins}var checkSellUrl='https://sellercentral.amazon.com/productsearch/search?query=';var asins=[];asins=getasins();var sellasins=[];asins.forEach(function(element){setTimeout(()=>{var url=checkSellUrl+element;httpRequest(url,(response)=>{var res=response.responseText;var jsonObj=JSON.parse(res);var messages=jsonObj.products[0].qualificationMessages;var flag=0;messages.forEach(function(message){var condition=message.conditionList;var result=message.qualificationMessage;if(condition.match('全新')&&result.match('批准')){flag=1}});if(flag==0){sellasins.push(element)}})},Math.ceil(Math.random()*8000))});setTimeout(()=>{var heading=document.getElementsByTagName('h5')[0];var table=document.createElement("table");function createtr(element){var tr=document.createElement('tr');var td=document.createElement("td");td.innerText=element;tr.appendChild(td);table.appendChild(tr)}if(sellasins.length==0){createtr('所有商品均无销售权限！')}sellasins.forEach((element)=>{createtr(element)});heading.appendChild(table)},5000)})();
+```
+
+使用方法，在谷歌浏览器的书签页上中，新建一个网址，网址名字随意，网址内容复制上述代码到内容栏，点击确定即可。
+
+使用时，登录亚马逊子账号，点击该书签页，从 excel 列复制 asin 即可。
+
+
+⚠️风险提示：使用该工具建议创建子账号去查询使用，同时，每次复制 asin 建议不超过300。
+ 
+该工具效率伴随着风险，我解释下为什么会有这种风险。
+ 
+这个工具的原理是，我们用程序去批量模拟点击亚马逊后台的查询商品授权动作，如果用程序去模拟这个动作，3s以内可以模拟 1000 次。但实际上，人类点击查询按钮的动作间隔，最快至少也要间隔3s，才能点击一次进行查询。
+ 
+在 @刘大白同学 原有的基础上，我加了每次模拟的时间间隔，每次随机在 8s 这个数字之间。
+ 
+昨晚一次尝试，用 1000 个 asin 进行批量查询，再次刷新页面，直接提示我的流量异常了，需要让我手动输入验证码才能再次进入后台查询。（就和google异地登录有些类似）至于亚马逊后台对多少数据量会有风控提示，我们是不知道的，所以尽量调低每次复制的 asin 数量。
+ 
+大家要意识到有这个风险存在。（目前除了让我输入验证码之外的操作，子账号还没出现什么其它的异常）。
